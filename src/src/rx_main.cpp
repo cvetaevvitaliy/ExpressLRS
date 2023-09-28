@@ -966,8 +966,8 @@ static bool ICACHE_RAM_ATTR ProcessRfPacket_SYNC(uint32_t const now, OTA_Sync_s 
 
     // modelId = 0xff indicates modelMatch is disabled, the XOR does nothing in that case
     uint8_t modelXor = (~config.GetModelId()) & MODELMATCH_MASK;
-    bool modelMatched = otaSync->UID5 == (UID[5] ^ modelXor);
-    DBGVLN("MM %u=%u %d", otaSync->UID5, UID[5], modelMatched);
+    bool modelMatched = otaSync->UID5 == (UID[2] ^ modelXor);
+    DBGVLN("MM %u=%u %d", otaSync->UID5, UID[2], modelMatched);
 
     if (connectionState == disconnected
         || OtaNonce != otaSync->nonce
