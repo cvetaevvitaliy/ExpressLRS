@@ -328,9 +328,9 @@ void ICACHE_RAM_ATTR GenerateSyncPacketData(OTA_Sync_s * const syncPtr)
   syncPtr->rateIndex = Index;
   syncPtr->newTlmRatio = newTlmRatio - TLM_RATIO_NO_TLM;
   syncPtr->switchEncMode = SwitchEncMode;
-  syncPtr->UID3 = UID[3];
-  syncPtr->UID4 = UID[4];
-  syncPtr->UID5 = UID[5];
+  syncPtr->UID3 = UID[0];
+  syncPtr->UID4 = UID[1];
+  syncPtr->UID5 = UID[2];
 
   // For model match, the last byte of the binding ID is XORed with the inverse of the modelId
   if (!InBindingMode && config.GetModelMatch())
